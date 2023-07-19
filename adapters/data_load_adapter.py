@@ -37,6 +37,8 @@ class DynamicDataManager(DataInterface):
             #------>    DBSCANAnomalyDetection???
 
         #----------DATA TRANSFORMATION---------
+
+        #USING PYSPARK TO LOAD FILE FROM FILE SYSYEM
         dataFrameJSON = spark.read \
             .option("timestampFormat", "yyyy/MM/dd HH:mm:ss") \
             .json(self.path)              #Selection of the json file path given as input
@@ -151,8 +153,8 @@ class DynamicDataManager(DataInterface):
 
         return panda_DF
 
-    def load_PODID(self):
-        df_podid = self.load_jsons()
+    def load_PODID(self, path):
+        df_podid = self.load_jsons(path=path)
         df_podid.drop(columns=["EPID", "end_time", "ActiveEnergy", "dayORnight", "TownCode"], inplace=True)
         df_podid.reset_index(drop=True, inplace=True)
         df_podid.drop_duplicates(inplace=True)

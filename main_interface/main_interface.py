@@ -1,5 +1,7 @@
 from core.anomaly_detection import AnomalyDetection
 
+from adapters.data_plotter import DataPlotter
+
 class MainInterface:
     def __init__(self, data_adapter, database_adapter):
         self.data_adapter = data_adapter
@@ -23,5 +25,15 @@ class MainInterface:
         # Esegue il rilevamento delle anomalie
         anomalies = anomaly_detection.anomaly_detection(data)
 
+        # Stampa a schermo le anomalie rilevate
+        print(anomalies)
+
         # Salva le anomalie nel database
-        self.database_adapter.write_to_database(anomalies)
+        #self.database_adapter.write_to_database(anomalies)
+
+        plotter_adapter = DataPlotter()
+        # Salva il grafico di distribuzione delle anomalie
+        #plotter_adapter.plot_data(anomalies, algorithm)
+
+
+

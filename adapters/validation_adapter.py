@@ -14,6 +14,7 @@ class Validator(ValidationInterface):
             except:
                 ne = ne + 1
                 #print(ne)
+
         #FP: numeri di anomalie positivi al rilevamento ma non tra quelle inserite manualmente
         fp = len(detected_anomalies) - tp
         #FN: numero di anomalie interite manualmente ma negativi al rilevamento

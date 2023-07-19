@@ -38,19 +38,19 @@ class SyntheticAnomalies:
         # For night, filter the data frame
         updated_df = self.df[self.df['dayORnight'] == '0']
 
-        min_range = 118000                        #300      #118000 PER GENOVA
-        max_range = 130000                        #350      #130000
-        self.number_of_anomalies = 100            #40       #100 PER GENOVA
+        min_range = 118000                                #15000           #300      #118000 PER GENOVA
+        max_range = 130000                                #20000           #350      #130000
+        self.number_of_anomalies = 100                    #2000            #40       #100 PER GENOVA
 
         for _ in range(self.number_of_anomalies):
             self.list_of_anomalies.append(random.randint(min_range, max_range))
 
-        print("LIST OF ANOMALIES")
-        print(self.list_of_anomalies) #COMMENTATO
+        #print("LIST OF ANOMALIES")
+        #print(self.list_of_anomalies) #COMMENTATO
 
         self.random_rows = updated_df.sample(self.number_of_anomalies, replace=False).index
-        print("RANDOM ROWS")
-        print(self.random_rows) #COMMENTATO
+        #print("RANDOM ROWS")
+        #print(self.random_rows) #COMMENTATO
 
         #print(updated_df)
 
