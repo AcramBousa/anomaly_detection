@@ -1,5 +1,6 @@
 from sklearn.cluster import KMeans
-from pandas import np
+#from pandas import np
+import numpy as np
 #from implementation.PELL_street_lighting_data import DynamicDataManager
 import pandas as pd
 #from core.anomaly_detection import AnomalyDetection
