@@ -29,3 +29,8 @@ In order to evaluate the performance of cluster algorithms for anomaly detection
 ```
 Run main.py    and   uncomment  whatever the scenario you want  to invoke
 ```
+
+### Scrittura su Database
+Per rendere operativo il modulo di scrittura del dataframe su db è necessario disporre di un database locale di prova (come ad esempio MySQL Workbench). Configurare quindi un'istanza locale chiamata "anomalies" (è possibile usare un'altro nome modificando però il codice di conseguenza). Creare quindi una tabella chiamata "detected_anomalies". Ora all'inderno del modulo database_adapter, modificare il codice relativo alla configurazione delle opzioni di scrittura indicando username e password per accedere alla tabella.
+
+
